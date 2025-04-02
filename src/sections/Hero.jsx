@@ -16,13 +16,13 @@ const Hero = forwardRef((props, ref) => {
           whileInView={{ opacity: 1.2, x: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
           viewport={{ amount: 0.1, once: true }}
-          className="flex flex-col lg:flex-row lg:pl-[100px] items-center p-5 gap-0 lg:gap-20 justify-between"
+          className="flex flex-col md:flex-row lg:pl-[100px] items-center p-5 gap-0 lg:gap-20 justify-between"
         >
           <div className=" w-full lg:w-1/2 flex flex-col items-start">
             <p className="text-center text-[12px] lg:text-sm text-gray p-0 m-0">
               MARN STACK DEVELOPER
             </p>
-            <h1 className=" text-5xl lg:text-8xl lg:text-8xl text-white font-bold text-left  p-0 m-0">
+            <h1 className=" text-5xl  lg:text-8xl text-white font-bold text-left  p-0 m-0">
               Hello, I’m{" "}
               <span className="text-primary block text-left m-0 p-0">
                  Mohammed

@@ -30,9 +30,9 @@ const LatestNews = () => {
             />
           </div>
 
-          <Flex classname="gap-7 px-4 lg:px-0 items-center justify-evenly flex-wrap lg:flex-none">
+          <Flex classname="gap-7 px-4 lg:px-0 items-center justify-center md:justify-evenly flex-nowrap md:flex-wrap">
             <div
-              className="w-[450px] h-[585px] 
+              className="md:w-[450px] w-full md:h-[585px] h-full
                group cursor-pointer rounded-[7px] bg-cardBg relative
              after:absolute after:w-full after:h-full after:content-[''] after:top-0 after:left-0
               hover:after:bg-gradient-to-b hover:after:bg-primary after:rounded-[7px] after:transition-all after:duration-300 after:opacity-65"

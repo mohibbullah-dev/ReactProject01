@@ -41,7 +41,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-5 md:py-12 bg-bgLight">
+    <section className="py-5 lg:py-12 bg-bgLight">
       <Container>
         <motion.div
           initial={{ opacity: 0, x: 200 }}
@@ -53,10 +53,10 @@ const Services = () => {
           <div className="flex flex-col justify-evenly  gap-7 items-center">
             <Title
               text="Awesome Sevice"
-              classname="text-5xl xl:text-6xl md:text-6xl text-center"
+              classname="text-5xl xl:text-6xl lg:text-6xl text-center"
             />
             <TitleDes
-              classname="text-xl md:text-lg md:w-[1000px] text-center"
+              classname="text-xl lg:text-lg lg:w-[1000px] text-center"
               text="There are many variations of passages of Lorem Ipsum available,
     but the majority have suffered alteration in some form, by
     injected humour, or randomised words which dont look even
@@ -65,10 +65,10 @@ const Services = () => {
             />
           </div>
 
-          <Flex classname={`gap-9 justify-evenly px-6 md:px-20 py-16 flex-col`}>
-            <Flex classname="gap-7 flex-wrap md:flex-nowrap">
+          <Flex classname={`gap-9 justify-evenly px-6 lg:px-20 py-16 flex-col`}>
+            <Flex classname="gap-7 flex-wrap 2xl:flex-nowrap">
               <div
-                className="cursor-pointer flex flex-col gap-7 p-6 md:p-20 w-full xl:w-1/3  md:w-1/3 h-[400px]  md:h-[450px] 
+                className="cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
   rounded-[7px] bg-cardBg items-stretch justify-center 
   transition-all duration-300 hover:bg-gradient-to-b hover:from-primary hover:to-secondary"
               >
@@ -92,7 +92,7 @@ const Services = () => {
               </div>
 
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 md:p-20 w-full xl:w-1/3  md:w-1/3 h-[400px]  md:h-[450px] 
+                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
              rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
               >
                 <CgWebsite className="w-[90.83px] h-[90.83px] text-primary" />
@@ -115,7 +115,7 @@ const Services = () => {
               </div>
 
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 md:p-20 w-full 2xl:w-1/3 md:w-1/3 h-[400px] md:h-[450px]
+                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full 2xl:w-1/3 lg:w-1/3 h-[400px] lg:h-[450px]
               rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
               >
                 <FaFileCode className="w-[90.83px] h-[90.83px] text-primary" />
@@ -138,9 +138,9 @@ const Services = () => {
               </div>
             </Flex>
 
-            <Flex classname="gap-7 flex-wrap md:flex-nowrap">
+            <Flex classname="gap-7 flex-wrap 2xl:flex-nowrap">
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 md:p-20 w-full md:w-1/3 h-[400px]  md:h-[450px] 
+                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full lg:w-1/3 h-[400px]  lg:h-[450px] 
               rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
               >
                 <DiMongodb className="w-[90.83px] h-[90.83px] text-primary" />
@@ -163,7 +163,7 @@ const Services = () => {
               </div>
 
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 md:p-20 w-full md:w-1/3 h-[400px]  md:h-[450px] 
+                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full lg:w-1/3 h-[400px]  lg:h-[450px] 
               rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
               >
                 <LiaNode className="w-[90.83px] h-[90.83px] text-primary" />
@@ -186,7 +186,7 @@ const Services = () => {
               </div>
 
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 md:p-20 w-full md:w-1/3 h-[400px]  md:h-[450px] 
+                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full lg:w-1/3 h-[400px]  lg:h-[450px] 
               rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
               >
                 <FaGithub className="w-[90.83px] h-[90.83px] text-primary" />

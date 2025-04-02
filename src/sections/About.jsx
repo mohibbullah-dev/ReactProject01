@@ -39,7 +39,7 @@ const About = () => {
           whileInView={{ opacity: 1.2, x: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
           viewport={{ amount: 0.1, once: true }}
-          className="flex flex-col 2xl:flex-row md:flex items-center gap-0 2xl:gap-12 md:gap-12 justify-center"
+          className="flex flex-col lg:flex-row items-center gap-0 2xl:gap-12 md:gap-12 justify-center"
         >
           <div className="md:order-1 2xl:order-1 order-2">
             <img
