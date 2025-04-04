@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "../components/Container";
 import Flex from "../components/Flex";
 import Title from "../components/Title";
@@ -11,8 +11,11 @@ import { FaGithub } from "react-icons/fa";
 import { FaUikit } from "react-icons/fa";
 
 import { motion } from "motion/react";
+import { themeContext } from "../contexts/allContext";
 
 const Services = () => {
+  const { theme } = useContext(themeContext);
+
   const ServicesCards = [
     {
       Title: "Ui/UX Design",
@@ -41,7 +44,11 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-5 lg:py-12 bg-bgLight">
+    <section
+      className={`py-5 lg:py-12 ${
+        theme === "dark" ? "bg-bgDeep" : "bg-yellow-50"
+      }`}
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0, x: 200 }}
@@ -68,16 +75,24 @@ const Services = () => {
           <Flex classname={`gap-9 justify-evenly px-6 lg:px-20 py-16 flex-col`}>
             <Flex classname="gap-7 flex-wrap 2xl:flex-nowrap">
               <div
-                className="cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
-  rounded-[7px] bg-cardBg items-stretch justify-center 
-  transition-all duration-300 hover:bg-gradient-to-b hover:from-primary hover:to-secondary"
+                className={`cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
+  rounded-[7px] ${
+    theme === "dark" ? "bg-cardBg" : "bg-white"
+  } items-stretch justify-center 
+  transition-all duration-300 hover:bg-gradient-to-b hover:from-primary hover:to-secondary`}
               >
-                <FaUikit className="w-[90.83px] h-[90.83px] text-primary" />
+                <FaUikit
+                  className={`w-[90.83px] h-[90.83px] ${
+                    theme === "dark" ? "text-primary" : "text-amber-100"
+                  }`}
+                />
                 {ServicesCards.map((item) =>
                   item.category === "ui" ? (
                     <p
                       key={item.category}
-                      className="text-[24px] text-white font-bold"
+                      className={`text-[24px] ${
+                        theme === "dark" ? "text-white" : "text-black"
+                      } font-bold`}
                     >
                       {item.Title}
                     </p>
@@ -92,15 +107,24 @@ const Services = () => {
               </div>
 
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
-             rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
+                className={`cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
+                  rounded-[7px] ${
+                    theme === "dark" ? "bg-cardBg" : "bg-white"
+                  } items-stretch justify-center 
+                  transition-all duration-300 hover:bg-gradient-to-b hover:from-primary hover:to-secondary`}
               >
-                <CgWebsite className="w-[90.83px] h-[90.83px] text-primary" />
+                <CgWebsite
+                  className={`w-[90.83px] h-[90.83px] ${
+                    theme === "dark" ? "text-primary" : "text-amber-100"
+                  }`}
+                />
                 {ServicesCards.map((item) =>
                   item.category === "design" ? (
                     <p
                       key={item.category}
-                      className="text-[24px] text-white font-bold"
+                      className={`text-[24px] ${
+                        theme === "dark" ? "text-white" : "text-black"
+                      } font-bold`}
                     >
                       {item.Title}
                     </p>
@@ -115,15 +139,24 @@ const Services = () => {
               </div>
 
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full 2xl:w-1/3 lg:w-1/3 h-[400px] lg:h-[450px]
-              rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
+                className={`cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
+                    rounded-[7px] ${
+                      theme === "dark" ? "bg-cardBg" : "bg-white"
+                    } items-stretch justify-center 
+                    transition-all duration-300 hover:bg-gradient-to-b hover:from-primary hover:to-secondary`}
               >
-                <FaFileCode className="w-[90.83px] h-[90.83px] text-primary" />
+                <FaFileCode
+                  className={`w-[90.83px] h-[90.83px] ${
+                    theme === "dark" ? "text-primary" : "text-amber-100"
+                  }`}
+                />
                 {ServicesCards.map((item) =>
                   item.category === "development" ? (
                     <p
                       key={item.category}
-                      className="text-[24px] text-white font-bold"
+                      className={`text-[24px] ${
+                        theme === "dark" ? "text-white" : "text-black"
+                      } font-bold`}
                     >
                       {item.Title}
                     </p>
@@ -140,15 +173,24 @@ const Services = () => {
 
             <Flex classname="gap-7 flex-wrap 2xl:flex-nowrap">
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full lg:w-1/3 h-[400px]  lg:h-[450px] 
-              rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
+                className={`cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
+                  rounded-[7px] ${
+                    theme === "dark" ? "bg-cardBg" : "bg-white"
+                  } items-stretch justify-center 
+                  transition-all duration-300 hover:bg-gradient-to-b hover:from-primary hover:to-secondary`}
               >
-                <DiMongodb className="w-[90.83px] h-[90.83px] text-primary" />
+                <DiMongodb
+                  className={`w-[90.83px] h-[90.83px] ${
+                    theme === "dark" ? "text-primary" : "text-amber-100"
+                  }`}
+                />
                 {ServicesCards.map((item) =>
                   item.category === "data" ? (
                     <p
                       key={item.category}
-                      className="text-[24px] text-white font-bold"
+                      className={`text-[24px] ${
+                        theme === "dark" ? "text-white" : "text-black"
+                      } font-bold`}
                     >
                       {item.Title}
                     </p>
@@ -163,15 +205,24 @@ const Services = () => {
               </div>
 
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full lg:w-1/3 h-[400px]  lg:h-[450px] 
-              rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
+                className={`cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
+                  rounded-[7px] ${
+                    theme === "dark" ? "bg-cardBg" : "bg-white"
+                  } items-stretch justify-center 
+                  transition-all duration-300 hover:bg-gradient-to-b hover:from-primary hover:to-secondary`}
               >
-                <LiaNode className="w-[90.83px] h-[90.83px] text-primary" />
+                <LiaNode
+                  className={`w-[90.83px] h-[90.83px] ${
+                    theme === "dark" ? "text-primary" : "text-amber-100"
+                  }`}
+                />
                 {ServicesCards.map((item) =>
                   item.category === "logic" ? (
                     <p
                       key={item.category}
-                      className="text-[24px] text-white font-bold"
+                      className={`text-[24px] ${
+                        theme === "dark" ? "text-white" : "text-black"
+                      } font-bold`}
                     >
                       {item.Title}
                     </p>
@@ -186,15 +237,24 @@ const Services = () => {
               </div>
 
               <div
-                className=" cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full lg:w-1/3 h-[400px]  lg:h-[450px] 
-              rounded-[7px] bg-cardBg hover:bg-linear-to-b from-primary to-secondary items-stretch justify-center relative"
+                className={`cursor-pointer flex flex-col gap-7 p-6 lg:p-20 w-full xl:w-1/3  lg:w-1/3 h-[400px]  lg:h-[450px] 
+                  rounded-[7px] ${
+                    theme === "dark" ? "bg-cardBg" : "bg-white"
+                  } items-stretch justify-center 
+                  transition-all duration-300 hover:bg-gradient-to-b hover:from-primary hover:to-secondary`}
               >
-                <FaGithub className="w-[90.83px] h-[90.83px] text-primary" />
+                <FaGithub
+                  className={`w-[90.83px] h-[90.83px] ${
+                    theme === "dark" ? "text-primary" : "text-amber-100"
+                  }`}
+                />
                 {ServicesCards.map((item) =>
                   item.category === "versionControl" ? (
                     <p
                       key={item.category}
-                      className="text-[24px] text-white font-bold"
+                      className={`text-[24px] ${
+                        theme === "dark" ? "text-white" : "text-black"
+                      } font-bold`}
                     >
                       {item.Title}
                     </p>

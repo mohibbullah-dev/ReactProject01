@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "../components/Container";
 import Flex from "../components/Flex";
 import Title from "../components/Title";
 import Button from "../components/Button";
 import formImage from "../assets/images/formImage.png";
 import { motion } from "motion/react";
+import { themeContext } from "../contexts/allContext";
 
 const Form = () => {
+  const { theme } = useContext(themeContext);
+
   return (
-    <section className=" lg:py-25 py-5 bg-bgDeep">
+    <section
+      className={`lg:py-25 py-5 ${
+        theme === "dark" ? "bg-bgDeep" : "bg-lightModeDeepBg"
+      }`}
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0, x: -200 }}
@@ -25,15 +32,30 @@ const Form = () => {
               />
               <p className="text-gray text-center lg:text-start text-lg lg:text-xl w-full lg:min-w-[664px]">
                 I am available for freelance work. Connect with me via phone: 
-                <span className="text-white">01912-123456 </span>or email: 
-                <span className="text-white">admin@example.com</span>
+                <span
+                  className={`${
+                    theme === "dark" ? "text-white" : "text-black"
+                  }`}
+                >
+                  01912-123456 
+                </span>
+                or email: 
+                <span
+                  className={`${
+                    theme === "dark" ? "text-white" : "text-black"
+                  }`}
+                >
+                  admin@example.com
+                </span>
               </p>
             </div>
 
             <div className="flex w-full flex-col lg:w-1/2 gap-5">
               <input
-                className=" lg:w-[664px] h-[45px] lg:h-[52px] rounded-[7px]
-               placeholder-gray lg:px-3.5 text-white outline-none border-2 border-gray"
+                className={`lg:w-[664px] h-[45px] lg:h-[52px] rounded-[7px]
+               placeholder-gray lg:px-3.5 ${
+                 theme === "dark" ? "text-white" : "text-black"
+               } outline-none border-2 border-gray`}
                 placeholder="Your name *"
                 type="text"
                 name=""
@@ -41,7 +63,10 @@ const Form = () => {
                 required
               />
               <input
-                className="w-auto lg:w-[664px] h-[45px] lg:h-[52px] rounded-[7px] placeholder-gray px-3.5 text-white outline-none border-2 border-gray"
+                className={`lg:w-[664px] h-[45px] lg:h-[52px] rounded-[7px]
+                  placeholder-gray lg:px-3.5 ${
+                    theme === "dark" ? "text-white" : "text-black"
+                  } outline-none border-2 border-gray`}
                 placeholder="Your email *"
                 type="email"
                 name=""
@@ -49,7 +74,10 @@ const Form = () => {
                 required
               />
               <input
-                className=" lg:w-[664px] h-[45px] lg:h-[52px] rounded-[7px] placeholder-gray px-3.5 text-white outline-none border-2 border-gray"
+                className={`lg:w-[664px] h-[45px] lg:h-[52px] rounded-[7px]
+                    placeholder-gray lg:px-3.5 ${
+                      theme === "dark" ? "text-white" : "text-black"
+                    } outline-none border-2 border-gray`}
                 placeholder="Write a subject"
                 type="email"
                 name=""
@@ -57,7 +85,9 @@ const Form = () => {
                 required
               />
               <textarea
-                className=" lg:w-[664px] h-[45px] lg:h-[52px] rounded-[7px] placeholder-gray px-3.5 text-white outline-none border-2 border-gray"
+                className={`lg:w-[664px] h-[45px] lg:h-[52px] rounded-[7px] placeholder-gray px-3.5 ${
+                  theme === "dark" ? "text-white" : "text-black"
+                } outline-none border-2 border-gray`}
                 name=""
                 id=""
                 placeholder="Your message"

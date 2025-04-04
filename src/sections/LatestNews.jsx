@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "../components/Container";
 import Flex from "../components/Flex";
 import Title from "../components/Title";
@@ -8,17 +8,23 @@ import news2 from "../assets/images/news2.png";
 import news3 from "../assets/images/news3.png";
 import Button from "../components/Button";
 import { motion } from "motion/react";
+import { themeContext } from "../contexts/allContext";
 
 const LatestNews = () => {
+  const { theme } = useContext(themeContext);
   return (
-    <section className="py-12 bg-bgLight">
+    <section
+      className={`py-12 pt-60 md:pt-12 ${
+        theme === "dark" ? "bg-bgLight" : "bg-yellow-50"
+      }`}
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0, x: 200 }}
           whileInView={{ opacity: 1.2, x: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
           viewport={{ amount: 0.1, once: true }}
-          classname="flex-col justify-center items-center "
+          classname="flex-col justify-center items-center"
         >
           <div className="flex flex-col gap-4 lg:gap-5 justify-center items-center">
             <Title text="Latest News" classname="text-5xl text-center" />
@@ -30,7 +36,7 @@ const LatestNews = () => {
             />
           </div>
 
-          <Flex classname="gap-7 px-4 lg:px-0 items-center justify-center md:justify-evenly flex-nowrap md:flex-wrap">
+          <Flex classname="gap-7 px-4 lg:px-0 items-center justify-center md:justify-evenly flex-wrap">
             <div
               className="md:w-[450px] w-full md:h-[585px] h-full
                group cursor-pointer rounded-[7px] bg-cardBg relative

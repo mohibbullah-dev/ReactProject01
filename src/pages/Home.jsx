@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Navbar from "../sections/Navbar";
 import Hero from "../sections/Hero";
 import About from "../sections/About";
@@ -8,6 +8,7 @@ import LatestNews from "../sections/LatestNews";
 import Form from "../sections/Form";
 import Footer from "../components/Footer";
 import { motion, useScroll } from "motion/react";
+import { themeContext } from "../contexts/allContext";
 
 const Home = () => {
   const [circleprogShow, setcirCleprogShow] = useState(false);
@@ -15,6 +16,8 @@ const Home = () => {
 
   const CirRef = useRef(null);
   const { scrollYProgress } = useScroll();
+
+  const { theme } = useContext(themeContext);
 
   useEffect(() => {
     const handleCirBar = () => {
@@ -54,7 +57,7 @@ const Home = () => {
           cx="40"
           cy="40"
           r="20"
-          stroke="#000000"
+          stroke={`${theme === "dark" ? "#000" : "#fff"}`}
           strokeWidth="6"
           fill="none"
         />
@@ -62,7 +65,7 @@ const Home = () => {
           cx="40"
           cy="40"
           r="20"
-          stroke="#f52323"
+          stroke={`${theme === "dark" ? "#fff" : "#000"}`}
           strokeWidth="6"
           fill="none"
           style={{ pathLength: scrollYProgress }} // Animates stroke length

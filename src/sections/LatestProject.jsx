@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Container from "../components/Container";
 import Flex from "../components/Flex";
 import Title from "../components/Title";
@@ -11,10 +11,16 @@ import project5 from "../assets/images/project5.png";
 import project6 from "../assets/images/project6.png";
 import Button from "../components/Button";
 import { motion } from "motion/react";
+import { themeContext } from "../contexts/allContext";
 
 const LatestProject = () => {
+  const { theme } = useContext(themeContext);
   return (
-    <section className="bg-bgDeep py-5  md:py-12">
+    <section
+      className={`${
+        theme === "dark" ? "bg-bgDeep" : "bg-lightModeDeepBg"
+      } py-5  md:py-12`}
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0, x: -200 }}

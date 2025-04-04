@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Container from "../components/Container";
 import Flex from "../components/Flex";
 import image2 from "../assets/images/image2.png";
@@ -10,9 +10,11 @@ import Educations from "./aboutComponents/Educations";
 import TitleDes from "../components/TitleDes";
 
 import { motion } from "motion/react";
+import { themeContext } from "../contexts/allContext";
 
 const About = () => {
   const [clicked, setClicked] = useState("");
+  const { theme } = useContext(themeContext);
 
   if (clicked === "skills") {
     console.log("This is skills");
@@ -32,7 +34,11 @@ const About = () => {
     setClicked(e.target.id);
   };
   return (
-    <section className="bg-bgDeep m-0 p-0 pt-10  pb-0 md:pt-25 md:pb-12">
+    <section
+      className={`${
+        theme === "dark" ? "bg-bgDeep" : "bg-lightModeDeepBg"
+      } m-0 p-0 pt-10  pb-0 md:pt-25 md:pb-12`}
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0, x: -200 }}
@@ -66,7 +72,9 @@ const About = () => {
               <li
                 id="skills"
                 onClick={HandleCliked}
-                className={`text-white cursor-pointer hover:text-primary relative duration-500 transi
+                className={`${
+                  theme === "dark" ? "text-white" : "text-black"
+                } cursor-pointer hover:text-primary relative duration-500 transi
             after:absolute after:content-[''] after:h-[3px] md:after:h-[4px] 
             after:bg-primary after:-bottom-3 after:left-0 after:rounded-lg after:w-full hover:after:animate-smoothTranslate`}
               >
@@ -76,7 +84,9 @@ const About = () => {
               <li
                 onClick={HandleCliked}
                 id="awards"
-                className={` after:bg-gray  after:h-[4px] after:w-1/2 text-white cursor-pointer hover:text-primary relative duration-500 
+                className={` after:bg-gray  after:h-[4px] after:w-1/2 ${
+                  theme === "dark" ? "text-white" : "text-black"
+                } cursor-pointer hover:text-primary relative duration-500 
             after:absolute after:content-[''] hover:after:h-[3px] md:after:h-[4px] 
             hover:after:bg-primary after:-bottom-3 after:left-0 after:rounded-lg hover:after:w-full hover:after:animate-smoothTranslate`}
               >
@@ -86,7 +96,9 @@ const About = () => {
               <li
                 onClick={HandleCliked}
                 id="experiences"
-                className={` after:bg-gray  after:h-[4px] after:w-1/2 text-white cursor-pointer hover:text-primary relative duration-500 
+                className={` after:bg-gray  after:h-[4px] after:w-1/2 ${
+                  theme === "dark" ? "text-white" : "text-black"
+                } cursor-pointer hover:text-primary relative duration-500 
                     after:absolute after:content-[''] hover:after:h-[3px] md:after:h-[4px] 
                     hover:after:bg-primary after:-bottom-3 after:left-0 after:rounded-lg hover:after:w-full hover:after:animate-smoothTranslate`}
               >
@@ -96,7 +108,9 @@ const About = () => {
               <li
                 onClick={HandleCliked}
                 id="education"
-                className={` after:bg-gray  after:h-[4px] after:w-1/2 text-white cursor-pointer hover:text-primary relative duration-500 
+                className={` after:bg-gray  after:h-[4px] after:w-1/2 ${
+                  theme === "dark" ? "text-white" : "text-black"
+                } cursor-pointer hover:text-primary relative duration-500 
                     after:absolute after:content-[''] hover:after:h-[3px] md:after:h-[4px] 
                     hover:after:bg-primary after:-bottom-3 after:left-0 after:rounded-lg hover:after:w-full hover:after:animate-smoothTranslate`}
               >
